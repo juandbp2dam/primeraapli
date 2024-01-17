@@ -21,6 +21,6 @@
             </DataGrid.Columns>
 
         </DataGrid>
-
+        <Button x:Name="btnAnyadir" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Añadir persona" Margin="0,342,0,0" Click="btnAnyadir_Click" />
     </Grid>
 </Window>

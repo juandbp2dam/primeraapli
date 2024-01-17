@@ -38,5 +38,23 @@ namespace PrimeraApli
                 new Persona(5, "Donny Donowitz"),
             ];
         }
+
+        private void btnAnyadir_Click(object sender, RoutedEventArgs e)
+        {
+            Persona p = new Persona();
+            if (LstPersonas.Count == 0)
+                p.Id = 1;
+            else
+                p.Id = LstPersonas.Max(p => p.Id) + 1;
+            p.Nombre = string.Empty;
+            p.FechaNacimiento = DateTime.Now;
+            DialogPersona dlg = new DialogPersona(p);
+            dlg.ShowDialog();
+            if (dlg.Persona != null && dlg.Persona.Id > 0)
+            {
+                LstPersonas.Add(dlg.Persona);
+            }
+
+        }
     }
 }

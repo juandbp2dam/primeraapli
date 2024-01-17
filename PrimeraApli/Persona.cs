@@ -7,23 +7,26 @@ using System.Threading.Tasks;
 
 namespace PrimeraApli
 {
-    public enum Genero { Hombre, Mujer}
+    //public enum Genero { Hombre, Mujer}
 
     public class Persona : INotifyPropertyChanged, IDataErrorInfo
     {
+        public Persona() { }
         
-        public Genero Genero { get; set; }
+        //public Genero Genero { get; set; }
         private string nombre;
         private DateTime fechaNacimiento;
         public int Id { get; set; }
         public string Nombre { 
             get => nombre; 
-            set { 
+            set 
+            { 
                 if (nombre != value) { 
                     nombre = value;
                     OnPropertyChanged(nameof(Nombre));
                 }
-            } }
+            } 
+        }
 
         public DateTime FechaNacimiento { get => fechaNacimiento;
             set {
