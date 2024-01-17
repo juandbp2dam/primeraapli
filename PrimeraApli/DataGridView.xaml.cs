@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,9 +20,23 @@ namespace PrimeraApli
     /// </summary>
     public partial class Ventana1 : Window
     {
+        public ObservableCollection<Persona> LstPersonas { get; set; }
         public Ventana1()
         {
             InitializeComponent();
+            fillList();
+            this.DataContext = this;
+        }
+        private void fillList()
+        {
+            LstPersonas =
+            [
+                new Persona(1, "Hans Landa"),
+                new Persona(2, "Aldo Raine"),
+                new Persona(3, "Shosanna Dreyfuss"),
+                new Persona(4, "Bridget Von Hammersmark"),
+                new Persona(5, "Donny Donowitz"),
+            ];
         }
     }
 }
